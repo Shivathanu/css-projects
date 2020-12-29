@@ -1,0 +1,3 @@
+[submodule "css-examples"]
+	path = css-examples
+	url = https://github.com/mdn/css-examples.git
