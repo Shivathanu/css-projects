@@ -1,0 +1,46 @@
+.testimonials{
+    padding: 3rem 1.35rem;
+    max-width: 79.43rem;
+    margin-inline: auto;
+
+     @include respond(tab-land){
+            padding-top: 8.89rem;
+            padding-bottom: 8.89rem;
+        }
+
+    &__container{
+        @include respond(tab-port){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond(tab-land){
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+.testimonial{
+    display: grid;
+    gap: 1.7rem;
+    text-align: center;
+    padding: 1.5rem 0 ;
+    
+    @include respond(tab-port){
+            &--lastchild{
+                grid-column: span 2 / span 2;
+            }
+        }
+
+        @include respond(tab-land){
+            &--lastchild{
+                grid-column: auto;
+            }
+        }
+
+    &__profile{
+        width: 3.2rem;
+        border-radius: 100vw;
+        margin-inline: auto;
+    }
+}

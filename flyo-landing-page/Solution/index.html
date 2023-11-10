@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fylo dark theme landing page</title>
+        <link rel="icon" href="./images/favicon-32x32.png" type="image/png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="theme-color" content="#444">
+        <meta name="color-scheme" content="dark">
+        <link rel="stylesheet" href="./styles/fonts.css">
+        <link rel="stylesheet" href="./styles/default.css">
+        <link rel="stylesheet" href="./styles/main.css">
+        <link rel="stylesheet" href="utility-classes.css">
+        <script>
+        // Always remove text selection when the user clicks on any part of the document
+        // This is to avoid those annoying times when you want to remove the selection but you can't
+        window.addEventListener('mousedown', event => {
+          if (event.button === 0) window.getSelection().empty()
+        }, {capture: true})
+
+        window.addEventListener('touchstart', event => {
+          window.getSelection().empty()
+        }, {capture: true})
+        </script>
+    </head>
+    <body>
+        <div data-id="app">
+            <div data-id="app-content">
+                <nav class="navbar-component">
+                    <a class="logo" href="#">
+                        <img draggable="false" src="./images/logo.svg" alt="logo">
+                    </a>
+                    <div class="links">
+                        <a href="#">Features</a>
+                        <a href="#">Team</a>
+                        <a href="#">Sign in</a>
+                    </div>
+                </nav>
+                <section class="main-section">
+                    <div class="background">
+                        <div class="main"></div>
+                        <div class="base"></div>
+                    </div>
+                    <div class="wrapper">
+                        <img class="imagesection" draggable="false" src="./images/illustration-intro.png" alt="">
+                        <h1 class="title">
+                            All your files in one secure location,
+                            accessible anywhere.
+                        </h1>
+                        <p class="description">
+                            Fylo stores all your most important files in one secure location.
+                            Access them wherever you need, share and collaborate with friends, family and co-workers.
+                        </p>
+                        <button class="button-component">Get Started</button>
+                    </div>
+                </section>
+                <section class="features-section">
+                    <div class="feature">
+                        <img class="image" draggable="false" src="./images/icon-access-anywhere.svg" alt="">
+                        <h2 class="title">Access your files, anywhere</h2>
+                        <p class="description">
+                            The ability to use a smartphone, table or computer
+                            to access your account means your files follow you
+                            everywhere.
+                        </p>
+                    </div>
+                    <div class="feature">
+                        <img class="image" draggable="false" src="./images/icon-security.svg" alt="">
+                        <h2 class="title">Security you can trust</h2>
+                        <p class="description">
+                            2-factor authentication and user-controlled encrytion are
+                            just a couple of the security features we allow to help
+                            secure your files.
+                        </p>
+                    </div>
+                    <div class="feature">
+                        <img class="image" draggable="false" src="./images/icon-collaboration.svg" alt="">
+                        <h2 class="title">Real-time collaboration</h2>
+                        <p class="description">
+                            Securely share files and folders with friends, family and
+                            colleagues for live collanoration. No email attachments
+                            required.
+                        </p>
+                    </div>
+                    <div class="feature">
+                        <img class="image" draggable="false" src="./images/icon-any-file.svg" alt="">
+                        <h2 class="title">Store any type of file</h2>
+                        <p class="description">
+                            Whether you're sharing holidays photos or work
+                            documents, Fylo has you covered allowing for all file
+                            types to be securely stored and shared.
+                        </p>
+                    </div>
+                </section>
+                <section class="info-section">
+                    <div class="image _absolute-media-wrapper">
+                        <img draggable="false" src="./images/illustration-stay-productive.png" alt="">
+                    </div>
+                    <div class="info">
+                        <h2 class="title">
+                            Stay productive,
+                            wherever you are
+                        </h2>
+                        <p class="description">
+                            Never let location be an issue when accessing your files. Fylo has you
+                            covered for all of your file storage needs.
+                        </p>
+                        <p class="description">
+                            Securely share files and folders with friends, family and colleagues for live
+                            collaboration. No email attachments required.
+                        </p>
+                        <a class="link" href="#">
+                            <div class="text">
+                                See how Fylo works
+                                <div class="ball"></div>
+                            </div>
+                            <div class="underline"></div>
+                        </a>
+                    </div>
+                </section>
+                <section class="quotes-section">
+                    <div class="quote">
+                        <p class="description">
+                            Fylo has improved our team productivity by
+                            an order of magnitude. Since making the
+                            switch our team has become a well-oiled
+                            collaboration machine.
+                        </p>
+                        <div class="user-quote">
+                            <img class="image" draggable="false" src="./images/profile-1.jpg" alt="">
+                            <div class="info">
+                                <span class="name">Satish Patel</span>
+                                <span class="role">Founder & CEO, Huddle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quote">
+                        <p class="description">
+                            Fylo has improved our team productivity by
+                            an order of magnitude. Since making the
+                            switch our team has become a well-oiled
+                            collaboration machine.
+                        </p>
+                        <div class="user-quote">
+                            <img class="image" draggable="false" src="./images/profile-2.jpg" alt="">
+                            <div class="info">
+                                <span class="name">Bruce Mckenzie</span>
+                                <span class="role">Founder & CEO, Huddle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quote">
+                        <p class="description">
+                            Fylo has improved our team productivity by
+                            an order of magnitude. Since making the
+                            switch our team has become a well-oiled
+                            collaboration machine.
+                        </p>
+                        <div class="user-quote">
+                            <img class="image" draggable="false" src="./images/profile-3.jpg" alt="">
+                            <div class="info">
+                                <span class="name">Iva Boyd</span>
+                                <span class="role">Founder & CEO, Huddle</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="early-access-section">
+                    <form class="form-component" action="#">
+                        <div class="info">
+                            <h2 class="title">Get early access today</h2>
+                            <p class="description">
+                                It only takes a minute to sign up and our free starter tier is extremely generous. If you have any
+                                questions, our support team would be happy to help you.
+                            </p>
+                        </div>
+                        <div class="emailaction">
+                            <input class="email" type="email" placeholder="email@example.com">
+                            <button class="button-component">Get Started For Free</button>
+                        </div>
+                    </form>
+                </section>
+                <footer class="footer-component">
+                    <img class="logo" draggable="false" src="./images/logo.svg" alt="Logo">
+                    <div class="links">
+                        <div class="location">
+                            <img class="image" draggable="false" src="./images/icon-location.svg" alt="">
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua
+                            </p>
+                        </div>
+                        <div class="contact">
+                            <a href="#" class="item">
+                                <img class="image" draggable="false" src="./images/icon-phone.svg" alt="">
+                                <div>+1-543-123-4567</div>
+                            </a>
+                            <a class="item" href="#">
+                                <img class="image" draggable="false" src="./images/icon-email.svg" alt="">
+                                <div>example@fylo.com</div>
+                            </a>
+                        </div>
+                        <div class="info">
+                            <div class="col">
+                                <a href="#">About Us</a>
+                                <a href="#">Jobs</a>
+                                <a href="#">Press</a>
+                                <a href="#">Blog</a>
+                            </div>
+                            <div class="col">
+                                <a href="#">Contact Us</a>
+                                <a href="#">Terms</a>
+                                <a href="#">Privacy</a>
+                            </div>
+                        </div>
+                        <div class="social">
+                            <a href="#">
+                                <svg fill="currentColor" width="15" height="15" viewBox="0 0 320 320">
+                                    <path d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064 c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996 V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545 C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703 c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"/>
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg width="15" height="15" viewBox="-3 -5 50 50">
+                                    <path fill="currentColor" transform="translate(-300.000000, -164.000000)" d="M348,168.735283 C346.236309,169.538462 344.337383,170.081618 342.345483,170.324305 C344.379644,169.076201 345.940482,167.097147 346.675823,164.739617 C344.771263,165.895269 342.666667,166.736006 340.418384,167.18671 C338.626519,165.224991 336.065504,164 333.231203,164 C327.796443,164 323.387216,168.521488 323.387216,174.097508 C323.387216,174.88913 323.471738,175.657638 323.640782,176.397255 C315.456242,175.975442 308.201444,171.959552 303.341433,165.843265 C302.493397,167.339834 302.008804,169.076201 302.008804,170.925244 C302.008804,174.426869 303.747139,177.518238 306.389857,179.329722 C304.778306,179.280607 303.256911,178.821235 301.9271,178.070061 L301.9271,178.194294 C301.9271,183.08848 305.322064,187.17082 309.8299,188.095341 C309.004402,188.33225 308.133826,188.450704 307.235077,188.450704 C306.601162,188.450704 305.981335,188.390033 305.381229,188.271578 C306.634971,192.28169 310.269414,195.2026 314.580032,195.280607 C311.210424,197.99061 306.961789,199.605634 302.349709,199.605634 C301.555203,199.605634 300.769149,199.559408 300,199.466956 C304.358514,202.327194 309.53689,204 315.095615,204 C333.211481,204 343.114633,188.615385 343.114633,175.270495 C343.114633,174.831347 343.106181,174.392199 343.089276,173.961719 C345.013559,172.537378 346.684275,170.760563 348,168.735283" />
+                                </svg>
+                                
+                            </a>
+                            <a href="#">
+                                <svg width="15" height="15" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" />
+                                    <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 15.5C13.933 15.5 15.5 13.933 15.5 12C15.5 10.067 13.933 8.5 12 8.5C10.067 8.5 8.5 10.067 8.5 12C8.5 13.933 10.067 15.5 12 15.5Z" />
+                                    <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17.6361 7H17.6477" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

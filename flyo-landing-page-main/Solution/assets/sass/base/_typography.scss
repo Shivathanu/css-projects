@@ -1,0 +1,97 @@
+.navigation{
+    font-family: $ff-nav;
+    font-size: max(1.2rem);
+    transition: all 250ms ease-in-out;
+
+    &__link{
+        text-decoration: none;
+        color: $clr-primary-dark;
+    }
+}
+
+.header{
+    &__text{
+        &--main{
+            font-family: $ff-heading;
+            font-size: 2.3rem;
+            font-weight: $fw-bold;
+            line-height: 1.4;
+
+            @include respond(tab-port) {
+                font-size: 2.65rem;
+            }
+
+            @include respond(tab-port) {
+                font-size: 3rem;
+            }
+        }
+
+        &--sub{
+            font-family: $ff-body;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+
+.feature{
+
+    &__header{
+        font-family: $ff-heading;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.6rem;
+        transition: all 250ms ease-in-out;
+
+        @include respond(phone){
+            text-align: left;
+            font-size: 1.8rem;
+        }
+
+        @include respond(tab-port){
+            text-align: left;
+            font-size: 2.3rem;
+        }
+
+        @include respond(tab-land){
+            font-size: 3rem;
+        }
+    }
+
+    &__text-box{
+        font-size: 1.3rem;
+        color: rgba($clr-primary-dark, 0.6);
+    }
+}
+
+.sign-up{
+    &__header{
+        font-family: $ff-heading;
+        font-weight: $fw-bold;
+        font-size: 1.7rem;
+
+        @include respond(phone){
+            font-size: 2rem;
+        }
+    }
+
+    &__text-box{
+        font-family: $ff-body;
+        font-size: 1.35rem;
+    }
+}
+
+.footer{
+    font-size: 1.5rem;
+    color: $clr-neutral-100;
+    
+    &__link{
+        font-family: $ff-cta;
+        text-decoration: none;
+        color: $clr-neutral-100;
+
+        &:hover{
+            color: $clr-primary-light;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="output.css">
+  
+  <title>Frontend Mentor | News Homepage</title>
+</head>
+
+<body class="font-main text-base bg-neutral-200 xl:overflow-y-hidden mt-0">
+
+  <main>
+
+    <div class="overlay bg-neutral-900 z-10 bg-opacity-60 absolute top-0 h-full w-full hidden xl:hidden"></div>
+
+      <div class="mobile-menu absolute bg-white top-0 right-0 z-20 w-[270px] h-full mt-0 hidden xl:hidden">
+        <img class="absolute right-[1.5rem] top-[1.5rem] cursor-pointer nav--close " src="./assets/img/icon-menu-close.svg" alt="">
+        <ul class="content-center gap-[5rem] text-neutral-900 text-opacity-[75] text-[1.2rem] pt-[60%]">
+          <li class="py-[1rem] px-[2rem]"><a class="hover:text-primary-400 transition-colors" href="">Home</a></li>
+          <li class="py-[1rem] px-[2rem]"><a class="hover:text-primary-400 transition-colors" href="">New</a></li>
+          <li class="py-[1rem] px-[2rem]"><a class="hover:text-primary-400 transition-colors" href="">Popular</a></li>
+          <li class="py-[1rem] px-[2rem]"><a class="hover:text-primary-400 transition-colors" href="">Trending</a></li>
+          <li class="py-[1rem] px-[2rem]"><a class="hover:text-primary-400 transition-colors" href="">Categories</a></li>
+        </ul>
+      </div>
+  
+    <section class="min-h-full m-[1.5rem] xl:my-[4rem] text-neutral-900 content-start md:max-w-[45rem] md:mx-auto lg:max-w-[53rem] xl:max-w-[72rem] main">
+  
+          <div class="flex justify-between mb-[1.6rem] xl:content-center xl:my-[3.5rem]">
+            <div class="h-fit">
+              <img class="w-[85%] xl:w-[100%]" src="./assets/img/logo.svg" alt="">
+            </div>
+  
+            <img class="xl:hidden w-[3rem] h-[2.3rem] scale-[85%] nav--open cursor-pointer" src="./assets/img/icon-menu.svg" alt="">  
+
+            <div class="hidden xl:block">
+              <ul class="flex content-center gap-[2.5rem] text-neutral-400 text-opacity-[75] pt-[.6rem]">
+                <li><a class="hover:text-primary-400 transition-colors" href="">Home</a></li>
+                <li><a class="hover:text-primary-400 transition-colors" href="">New</a></li>
+                <li><a class="hover:text-primary-400 transition-colors" href="">Popular</a></li>
+                <li><a class="hover:text-primary-400 transition-colors" href="">Trending</a></li>
+                <li><a class="hover:text-primary-400 transition-colors" href="">Categories</a></li>
+              </ul>
+            </div>
+          </div>
+  
+          <section class="grid xl:grid-cols-3 xl:gap-[1.8rem]">
+              <div class="header grid gap-[1.5rem] mb-[3.2rem] xl:col-span-2 xl:content-start">
+                <img class="md:hidden" src="./assets/img/image-web-3-mobile.jpg" alt="">
+                <img class="hidden md:block " src="./assets/img/image-web-3-desktop.jpg" alt="">
+  
+  
+                <div class="grid gap-[1.2rem] md:grid-cols-2">
+                  <h1 class="text-[2.8rem] font-extrabold leading-[1.15] xl:text-[3.5rem]"> The Bright Future of Web 3.0? </h1>
+  
+                  <div class="grid gap-[1.5rem]">
+                    <p class="text-neutral-400 opacity-75 leading-[1.8] ">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
+  
+                    <a class="bg-primary-400 py-[.8rem] px-[2rem] uppercase  w-fit font-bold text-neutral-200 tracking-[.3rem] hover:bg-neutral-900 transition-all duration-300" href="">Read More</a>
+                  </div>
+                </div>
+              </div>
+  
+      
+  
+            <div class="sidebar bg-neutral-900 px-[1.2rem] py-[1.5rem] text-neutral-300 mb-[4rem] ">
+              <h2 class="text-[2rem] text-primary-300 font-extrabold mb-[1rem]">New</h2>
+  
+              <div class="py-[2.2rem] border-b border-solid  border-b-neutral-400">
+                <a href="#" class="text-neutral-200 text-[1.4rem] font-bold mb-[.8rem] hover:text-primary-300 transition-all duration-150">Hydrogen VS Electric Cars</a>
+                <P>Will hydrogen-fueled cars ever catch up to EVs?</P>
+              </div>
+  
+              <div class="py-[2.2rem] border-b border-solid  border-b-neutral-400">
+                <a href="#" class="text-neutral-200 text-[1.4rem] font-bold mb-[.8rem] hover:text-primary-300 transition-all duration-150">The Downsides of AI Artistry</a>
+                <P>What are the possible adverse effects of on-demand AI image generation?</P>
+              </div>
+  
+              <div class="pt-[2.2rem]">
+                <a href="#" class="text-neutral-200 text-[1.4rem] font-bold mb-[.8rem] hover:text-primary-300 transition-all duration-150">Is VC Funding Drying Up?</a>
+                <P>Private funding by VC firms is down 50% YOY. We take a look at what that means.</P>
+              </div>
+            </div>
+          </section>
+  
+  
+  
+  
+      <section class="grid gap-[1.7rem] md:grid-cols-2 xl:grid-cols-3">
+        <div class="flex gap-[1.3rem] ">
+          <img class="w-[6.2rem]"  src="./assets/img/image-retro-pcs.jpg" alt="">
+          <div class="flex flex-col gap-[1rem] align-bottom">
+            <p class="text-neutral-300 text-[2.5rem] font-bold tracking-[.2rem]">01</p>
+            <a href="" class=" hover:text-primary-400 font-bold text-[1.25rem] text-neutral-900 "> Reviving Retro PCs</a>
+            <p class="text-neutral-400 opacity-75">What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+  
+        <div class="flex grid-cols-2 gap-[1.3rem] ">
+          <img  class="w-[6.2rem]" src="./assets/img/image-top-laptops.jpg" alt="">
+          <div class="flex flex-col gap-[1rem] ">
+            <p class="text-neutral-300 text-[2.5rem] font-bold tracking-[.2rem]">02</p>
+            <a href="" class=" hover:text-primary-400 font-bold text-[1.25rem] text-neutral-900 ">Top 10 Laptops of 2022</a>
+            <p class="text-neutral-400 opacity-75">Our best picks 6.8remarious needs and budgets.</p>
+          </div>
+        </div>
+  
+        <div class="flex grid-cols-2 gap-[1.3rem] ">
+          <img  class="w-[6.2rem]" src="./assets/img/image-gaming-growth.jpg" alt="">
+          <div class="flex flex-col gap-[1rem] ">
+            <p class="text-neutral-300 text-[2.5rem] font-bold tracking-[.2rem]">03</p>
+            <a href="" class=" hover:text-primary-400 transition-colors font-bold text-[1.25rem] text-neutral-900 ">The Growth of Gaming</a>
+            <p class="text-neutral-400 opacity-75">How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </section>
+  
+    </section>
+  </main>
+  <footer class="sr-only">
+  
+    <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  </footer>
+
+  <script type="module" src="./assets/js/scripts.js"></script>
+</body>
+</html>

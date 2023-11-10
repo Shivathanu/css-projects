@@ -1,0 +1,75 @@
+._max-z-index_ {
+  z-index: 2147483647;
+}
+
+
+._no-self-events_ {
+  pointer-events: none;
+}
+
+._no-self-events_ > * {
+  pointer-events: auto;
+}
+
+
+._grid-overlay_ {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'overlay';
+  place-items: center;
+}
+
+._grid-overlay_ > * {
+  grid-area: overlay;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+._aspect-ratio-wrapper_ {
+  position: relative;
+  --aspect-ratio: 16 / 9;
+}
+
+._aspect-ratio-wrapper_::before {
+  content: '';
+  display: block;
+
+  position: relative;
+
+  padding-top: calc(
+    100% * 1 / (var(--aspect-ratio))
+  );
+}
+
+._aspect-ratio-wrapper_ > :first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  min-width: 0;
+  min-height: 0;
+
+  max-width: none;
+  max-height: none;
+
+  width: 100%;
+  height: 100%;
+}
+
+._absolute-media-wrapper_ {
+  position: relative;
+  z-index: 0;
+}
+
+._absolute-media-wrapper_ > :first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,144 @@
+{
+
+  "filters": [
+    {
+      "name": "Location",
+      "list": [
+        "Remote",
+        "United States",
+        "India",
+        "Australia",
+        "Poland",
+        "Canada"
+      ]
+    },
+    {
+      "name": "Payment",
+      "list": [
+        "Verified",
+        "Unverified"
+      ]
+    },
+    {
+      "name": "Level",
+      "list": [
+        "Entry",
+        "Intermediate",
+        "Expert"
+      ]
+    }
+  ],
+
+  "jobs": [
+    {
+      "name": "Looking for a freenlance frontend developer",
+      "icon": "assets/logos/First Job Logo.svg",
+      "location": {
+        "value": "United States",
+        "ui_value": "Virginia, United States"
+      },
+      "tags": ["Frontend", "Webdev"],
+      "isPaymentVerified": true,
+      "payment_text": "Payment Verified",
+      "payment_icon": "assets/icons/Checkmark Verified.svg",
+      "info": {
+        "name": "Frontend Developer",
+        "time": "Posted 4 days ago",
+        "details": {
+          "experience": "Expert",
+          "location": "Virginia, United States",
+          "salary_range": "$100-120/h"
+        },
+        "company_overview": "Dividstar was established in 1932 by Matthew Cohens in Virginia, United States. Dividstart has been the leader application for personal finance over the past 10 decades and aim to continue holding that position. As times continue to evolve, we do too.",
+        "requirements": [
+          "4 years of professional working experience.",
+          "Understanding of Next.js, React and Angular.",
+          "Knowledge of REACT tools including React.js, Webpack, Enzyme, Redux and Flux."
+        ]
+      }
+    },
+    {
+      "name": "Product Designer needed",
+      "icon": "assets/logos/Second Job Logo.svg",
+      "location": {
+        "value": "Remote",
+        "ui_value": "Remote"
+      },
+      "tags": ["Design", "Research"],
+      "isPaymentVerified": false,
+      "payment_text": "Payment Unverified",
+      "payment_icon": "assets/icons/Checkmark Not Verified.svg",
+      "info": {
+        "name": "Product Designer",
+        "time": "Posted 4 days ago",
+        "details": {
+          "experience": "Entry",
+          "location": "Remote",
+          "salary_range": "$110-140/h"
+        },
+        "company_overview": "FakeItAll was invented in order to fill this website and remove its emptiness from existence. You won't regret join us and our large team of experts in the field.",
+        "requirements": [
+          "Experience doing similar work.",
+          "Don't make us lose our time or you won't see the light of the day again.",
+          "Leave your girlfriend if you have any but you probably don't."
+        ]
+      }
+    },
+    {
+      "name": "SEO Specialist for an e-commerce shop",
+      "icon": "assets/logos/Third Job Logo.svg",
+      "location": {
+        "value": "United States",
+        "ui_value": "New York, United States"
+      },
+      "tags": ["SEO"],
+      "isPaymentVerified": false,
+      "payment_text": "Payment Unverified",
+      "payment_icon": "assets/icons/Checkmark Not Verified.svg",
+      "info": {
+        "name": "SEO Specialist",
+        "time": "Posted 4 days ago",
+        "details": {
+          "experience": "Expert",
+          "location": "United States",
+          "salary_range": "$90-110/h"
+        },
+        "company_overview": "We started \"MonkeyKnowsAboutYou\" because we were extremely bored in our houses since by the time videogames didn't exist. You can't leave once you join us, if you try you will perish.",
+        "requirements": [
+          "Account in TikTok.",
+          "Knowledge of the word \"API\".",
+          "Bad popularity among minorities."
+        ]
+      }
+    },
+    {
+      "name": "Migrate our website from Sketch to Figma",
+      "icon": "assets/logos/Fourth Job Logo.svg",
+      "location": {
+        "value": "India",
+        "ui_value": "Mumbai, India"
+      },
+      "tags": ["Designer"],
+      "isPaymentVerified": true,
+      "payment_text": "Payment Verified",
+      "payment_icon": "assets/icons/Checkmark Verified.svg",
+      "info": {
+        "name": "Figma Designer",
+        "time": "Posted 4 days ago",
+        "details": {
+          "experience": "Intermediate",
+          "location": "India",
+          "salary_range": "$60-90/h"
+        },
+        "company_overview": "DividedMoon company was canceled after the inclusive language invided the world, but our esence still remains in websites like this to serve as a filler.",
+        "requirements": [
+          "Avoid any contact with friends and family.",
+          "Accept our politics and forget everything you belive.",
+          "You are limited to use one program at once.",
+          "Don't use Java."
+        ]
+      }
+    }
+  ]
+
+}

@@ -1,0 +1,107 @@
+.header{
+    .nav{
+        &__link{
+            font-family: $font-sans;
+            font-weight: $fw-semibold;
+            text-decoration: none;
+            color: $clr-white;
+
+            &:hover{
+                color: $clr-light-200;
+            }
+        }
+    }
+
+    .hero{
+        &__header{
+            font-size: 2.235rem;
+            font-weight: $fw-black;
+            padding: 1rem;
+            line-height: 1.2;
+            letter-spacing: 5px;
+            color: $clr-white;
+            text-transform: uppercase;
+
+            @include respond(tab-port){
+                font-size: 3.2rem;
+                letter-spacing: 8.75px;
+                line-height: 69.5px;
+            }
+        }
+    }
+}
+
+.feature{
+    &__header{
+        font-size: 1.78rem;
+        line-height: 1.1;
+
+        @include respond(tab-port){
+                font-size: 2.23rem;
+            }
+    }
+
+    &__text{
+        font-family: $font-sans;
+        font-size: 1rem;
+        color: $clr-neutral-400;
+        line-height: 30px;
+        letter-spacing: -0.13px;
+    }
+
+    &__link{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .9rem;
+        color: $clr-neutral-700;
+        font-weight: $fw-black;
+
+    }
+}
+
+.service{
+    &__header{
+        font-size: 1.56rem;
+        font-weight: $fw-black;
+    }
+
+    &__text{
+        font-size: .89rem;
+        font-family: $font-sans;
+    }
+}
+
+.testimonials{
+    &__heading{
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: .89rem;
+        color: $clr-neutral-300;
+        padding-bottom: 1.5rem;
+
+        @include respond(tab-port){
+            font-size: 1.13rem;
+            letter-spacing: 5px;
+            line-height: 24px;
+        }
+    }
+}
+
+.testimonial{
+    &__text{
+        font-family: $font-sans;
+        color: $clr-neutral-600;
+        font-size: 1rem;
+        max-width: 20rem;
+        margin-inline: auto;
+        line-height: 32px;
+        letter-spacing: -0.13px;
+    }
+
+    &__job{
+        font-family: $font-sans;
+        font-size: .78rem;
+        color: $clr-neutral-300;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="icon" href="data:image/x-icon," type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="theme-color" content="#444">
+        <meta name="color-scheme" content="dark">
+        <link rel="stylesheet" href="default.css">
+        <link rel="stylesheet" href="main.css">
+        <script type="module" src="main.js"></script>
+        <script>
+        // Always remove text selection when the user clicks on any part of the document
+        // This is to avoid those annoying times when you want to remove the selection but you can't
+        window.addEventListener('mousedown', event => {
+          if (event.button === 0) window.getSelection().empty()
+        })
+        </script>
+        <template data-js-filter-aside-template>
+            <div class="filter" data-filter-type="{{@filter.name}}" [for]="filter of filters">
+                <div class="title">{{@filter.name}}</div>
+                <div class="label-checkbox" data-filter="{{@label}}" tabindex="0" [for]="label of @filter.list">
+                    <div class="check-box" aria-checked="false">
+                        <svg viewBox="0 0 12 10">
+                            <polyline fill="none" stroke="currentColor" stroke-width="2" points="1.5 6 4.5 9 10.5 1" />
+                        </svg>
+                    </div>
+                    <div class="label">{{@label}}</div>
+                </div>
+            </div>
+        </template>
+        <template data-js-job-card-template>
+            <div class="job-card" data-index="{{#index}}" tabindex="0" [for]="job of jobs; index">
+                <div class="top">
+                    <img class="logo" src="{{@job.icon}}" alt>
+                    <div class="title">
+                        <div class="name">{{@job.name}}</div>
+                        <div class="location">
+                            <img class="icon" src="assets/icons/Location.svg" alt>
+                            <div class="text">{{@job.location.ui_value}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="tags">
+                        <div class="tag" [for]="tag of @job.tags">{{@tag}}</div>
+                    </div>
+                    <div class="payment">
+                        <img class="icon" src="{{@job.payment_icon}}" alt>
+                        <div class="text">{{@job.payment_text}}</div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template data-js-job-info-template>
+            <div class="jobwrapper">
+                <div class="header">
+                    <div class="title">
+                        <div class="name">{{info.name}}</div>
+                        <div class="location">{{info.details.location}}</div>
+                    </div>
+                    <div class="time">{{info.time}}</div>
+                </div>
+                <div class="details">
+                    <div class="experience">
+                        <div class="title">Experience</div>
+                        <div class="value">{{info.details.experience}}</div>
+                    </div>
+                    <div class="location">
+                        <div class="title">Location</div>
+                        <div class="value">{{info.details.location}}</div>
+                    </div>
+                    <div class="salaryrange">
+                        <div class="title">Salaray Range</div>
+                        <div class="value">{{info.details.salary_range}}</div>
+                    </div>
+                </div>
+                <div class="companyoverview">
+                    <div class="title">Company Overview</div>
+                    <div class="text">{{info.company_overview}}</div>
+                </div>
+                <div class="jobrequirements">
+                    <div class="title">Job Requirements</div>
+                    <div class="requirements">
+                        <div class="item" [for]="item of info.requirements">
+                            <img class="icon" src="assets/icons/Checkmark Verified.svg" alt>
+                            <div class="text">{{@item}}</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="apply-job-btn" tabindex="0">Apply to job</button>
+            </div>
+        </template>
+        <template data-js-no-job-match-filter-message-template>
+            <div class="no-job-match-filter-message">No job offert match filter</div>
+        </template>
+    </head>
+    <body>
+        <div id="app">
+            <div id="app-content">
+                <nav class="navbar-block">
+                    <a class="logo" href="#">
+                        <img src="assets/logos/Workside Logo.svg" alt="Workside Logo">
+                    </a>
+                    <div class="list" role="list">
+                        <a class="item" href="#" role="listitem">Find a job</a>
+                        <a class="item" href="#" role="listitem">Submit a job</a>
+                        <a class="item" href="#" role="listitem">Sponsor us</a>
+                    </div>
+                    <div class="profile-btn" tabindex="0">
+                        <img class="avatar" src="assets/images/Avatar.svg" alt="Profile image">
+                        <div class="username">Olivia Benjamin</div>
+                        <div class="arrowdown">
+                            <img src="assets/icons/Down Arrow.svg" alt>
+                        </div>
+                    </div>
+                    <div class="hamburguer-menu-btn -mobile">
+                        <img src="assets/images/Hamburger Menu.png" alt="Hamburger Button">
+                    </div>
+                </nav>
+                <aside class="aside-block" data-js-filter-aside></aside>
+                <main class="main-block">
+                    <div class="mobile-filter-container">
+                        <div class="filter-mobile-btn">
+                            <div class="title">Filters</div>
+                            <img class="icon" src="assets/icons/Down Arrow.svg" alt>
+                        </div>
+                    </div>
+                    <div class="job-cards" data-js-job-cards></div>
+                    <div class="job-info" data-js-job-info>
+                        <div class="messagewrapper">
+                            <div class="message">Select a job offert to see its details</div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

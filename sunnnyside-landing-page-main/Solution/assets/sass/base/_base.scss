@@ -1,0 +1,11 @@
+html{
+    font-size: 112.5%;
+}
+
+body{
+    font-family: $font-serif;
+    scroll-behavior: smooth;
+    font-weight: $fw-semibold;
+    min-height: 100vh;
+    overflow-x: hidden;
+}

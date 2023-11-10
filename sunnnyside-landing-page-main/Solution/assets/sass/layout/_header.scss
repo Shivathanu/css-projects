@@ -1,0 +1,154 @@
+.header{
+    background-image: url("/assets/images/mobile/image-header.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    min-height: 65vh;
+    padding: 1.3rem;
+    position: relative;
+    transition: all 150ms ease-in-out;
+
+    @include respond(phone){
+        background-image: url("/assets/images/desktop/image-header.jpg");
+        min-height: 75vh;
+    }
+
+    @include respond(tab-port){
+        min-height: 87vh;
+        padding: 2rem 2.67rem 0rem 2.23rem;
+    }
+
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__logo{
+            width: 6.8rem;
+
+            @include respond(phone){
+                width: 8rem;
+            }
+
+            @include respond(phone-land){
+                width: 9rem;
+            }
+
+            @include respond(tab-port){
+                width: 9.45rem;
+            }
+        }
+
+        &__list{
+            gap: 1rem;
+            justify-content: space-between;
+            list-style: none;
+            display: none;
+
+            @include respond(tab-port){
+                display: flex;
+                gap: 2.61rem;
+            }
+
+            & .contact{
+                background: $clr-white;
+                font-family: $font-serif;
+                font-weight: $fw-bold;
+                text-transform: uppercase;
+                font-size: 0.83rem;
+                color: $clr-neutral-700;
+                padding: 0.89rem 1.67rem;
+                border-radius: 50vw;
+                transition: all 200ms ease-in-out;
+
+                &:hover{
+                    background: rgba($clr-white, .4);
+                    color: $clr-white;
+                }
+
+                }
+        }
+
+        &__menu{
+            background: transparent;
+            cursor: pointer;
+            border: none;
+            outline: none;
+
+            @include respond(tab-port){
+                display: none;
+            }
+        }
+    }
+
+    .mobile{
+        width: 330px;
+        background: $clr-white;
+        position: absolute;
+        top: 12%;
+        right: 1.5rem;
+        z-index: 30;
+        padding: 1.5rem;
+        -webkit-clip-path: polygon(92% 8%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 8%); 
+        clip-path: polygon(92% 8%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 8%);
+
+        @include respond(tab-port){
+            display: none;
+        }
+
+
+        &__items{
+            padding: 1rem;
+            display: block;
+        }
+
+        &__list{
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        &__link{
+            font-family: $font-sans;
+            font-weight: $fw-semibold;
+            text-decoration: none;
+            color: $clr-neutral-400;
+
+            &:hover{
+                color: $clr-light-200;
+            }
+        }
+
+        & .contact{
+            background: $clr-light-200;
+            font-family: $font-serif;
+            font-weight: $fw-bold;
+            text-transform: uppercase;
+            font-size: 0.83rem;
+            color: $clr-neutral-700;
+            padding: 0.89rem 1.67rem;
+            border-radius: 50vw;
+            transition: all 200ms ease-in-out;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .hero{
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        width: 100vw;
+        // z-index: 10;
+        transform: translateX(-50%) translateY(-25%);
+
+        &__icon{
+            position: absolute;
+            top: 150%;
+            left: 48.5%;
+            transform: translateX(-50%);
+            animation: updown 1s 2s infinite;
+        }
+    }
+}
+

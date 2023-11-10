@@ -1,0 +1,53 @@
+.footer{
+    background: $clr-footer;
+    display: grid;
+    padding: 3rem 2.16rem 4.45rem;
+
+    &__logo{
+        width: 9.45rem;
+        margin-inline: auto;
+        filter: invert(27%) sepia(10%) saturate(2019%) hue-rotate(116deg) brightness(50%) contrast(88%);
+        margin-bottom: 2.23rem;
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 4.45rem;
+        max-width: 16.5rem;
+        margin-inline: auto;
+
+    }
+
+    &__links{
+        color: $clr-dark-100;
+        text-decoration: none;
+        font-size: 1rem;
+        font-family: $font-sans;
+
+        &:hover{
+            color: $clr-white;
+        }
+    }
+
+    &__socials{
+        display: flex;
+        gap: 1.56rem;
+        margin-inline: auto;
+        margin-bottom: 1.2rem;
+    }
+
+    &__icons{
+        width: 1.12rem;
+        cursor: pointer;
+        transition: all 150ms ease-in-out;
+
+        &:hover{
+            filter: brightness(0) invert(1);
+        }
+    }
+}

@@ -1,0 +1,138 @@
+.feature{
+    display: grid;
+    text-align: center;
+    color: $clr-neutral-700;
+
+    &__img{
+        width: 100%;
+    }
+
+    @include respond(phone-land){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        &--transform{
+            .transform__img{
+                grid-row-start: 1;
+                grid-column-start: 2;
+            }
+    }
+        }
+
+    @include respond(tab-port){
+            text-align: left;
+        }
+
+    &__textbox{
+        padding: 3rem 1.5rem;
+        display: grid;
+        gap: 1.2rem;
+        align-content: center;
+        max-width: 28rem;
+        margin-inline: auto;
+
+        @include respond(phone-land){
+            padding: 0 1.5rem;
+        }
+    }
+
+    &__linkbox{
+        position: relative;
+        width: max-content;
+        margin-inline: auto;
+
+        @include respond(tab-port){
+            margin-inline: 0;
+        }
+    }
+
+    &__link{
+        &:hover + &-shadow{
+            &--transform{
+            background: $clr-light-200;
+            }
+
+            &--stand{
+                background: $clr-light-100;
+            }
+        }
+    }
+
+    &__link-shadow{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -10;
+        height: 8px;
+        width: max-content;
+        padding-inline: 3.5rem;
+        border-radius: 50vw;
+        transition: all 200ms ease-in-out;
+
+        &--transform{
+            background: rgba($clr-light-200, 0.3);
+        }
+
+        &--stand{
+            background: rgba($clr-light-100, 0.4);
+        }
+    }
+}
+
+.services{
+
+    @include respond(phone-land){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.service{
+    position: relative;
+    max-height: 925px;
+    overflow: hidden;
+
+    &__img{
+        width: 100%;
+    }
+
+    &__textbox{
+        position: absolute;
+        bottom: 3.27rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: $clr-dark-400;
+        padding: 1.3rem;
+        width: 22.1rem;
+        margin-inline: auto;
+
+        @include respond(tab-port){
+            bottom: .7rem;
+        }
+
+        @include respond(tab-land){
+            bottom: 1.7rem;
+        }
+
+        display: grid;
+        gap: 1rem;
+
+        &--graphic{
+            color: $clr-dark-400;
+        }
+        &--photo{
+            color: $clr-dark-300;
+        }
+    }
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include respond(tab-port){
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

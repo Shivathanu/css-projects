@@ -1,0 +1,109 @@
+.header{
+    display: grid;
+    gap: 3.5rem;
+    text-align: center;
+    padding: 8rem 0;
+    width: 80%;
+    margin-inline: auto;
+
+    max-width: 120rem;
+    margin-inline: auto;
+
+    @include respond(phone){
+        width: 90%;
+        max-width: 62.5rem;
+    }
+
+    @include respond(tab-port){
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        max-width: 102.67rem;
+    }
+
+    @include respond(tab-land){
+        width: 95%;
+        max-width: 111.60rem;
+    }
+
+    &__img{
+        @include respond(tab-port){
+            grid-column-start: 2;
+            grid-row-start: 1;
+        }
+    }
+
+    &__textbox{
+
+        @include respond(phone){
+            text-align: left;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 4rem;
+        }
+
+        @include respond(tab-port){
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0;
+        }
+
+        @include respond(tab-land){
+            max-width: 45rem;
+        }
+    }
+
+    &__text{
+        display: grid;
+        gap: 2.3rem;
+    }
+
+    &__form{
+        position: relative;
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 1rem;
+
+        @include respond(tab-port){
+            grid-template-columns: repeat(2, 60% 40%);
+            gap: 1.2rem;
+            align-items: center;
+        }
+        
+        &-box{
+            outline: none;
+            padding: 1rem;
+
+            @include respond(tab-port){
+                grid-column-start: 1;
+            }
+
+            &:focus:invalid{
+                border: solid 1px $clr-error;
+            }
+
+            &:focus:invalid + &__error-text{
+                display: block;
+            }
+
+            &__error-text{
+                margin-top: -1.6rem;
+                color: $clr-error;
+                display: none;
+                text-align: left;
+
+                @include respond(tab-port){
+                    position: absolute;
+                    top: 130%;
+                }
+            }
+        }
+
+    &__button{
+        @include respond(tab-port){
+            max-width: 11em;
+        }
+    }
+}
+
+}
