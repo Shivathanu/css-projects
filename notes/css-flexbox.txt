@@ -1,0 +1,31 @@
+1. Flexbox stacks html elements on main axis and cross axis. By default the elements are aligned on the main axis, and the main axis is horizontal.
+To make the main axis as vertical, add a property flex-direction: column.
+
+2. To align container elements,
+
+.container {
+    display: flex;
+    justify-content: center / space-between / space-around / flex-start / flex-end;
+    align-items: center / baseline;
+}
+
+3. To wrap the flex items / children inside a container, then use 
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1em;
+}
+
+4. To grow a particular flex item, use flex-grow: 1 property.
+flex-grow works based on unitless value as it allows the item to grow in proportion to the rest available space.
+It is recommended to use shorthand property as flex: 1. 
+Flex: 1 is a combination of flex-grow, flex-shrink, flex-basis.
+
+5. Overwrite alignment of items with respect to the container spec:
+For eg: align-items in container is set to center. But if need to overwrite the first item position to center then
+align-self: center works.
+
+6. Change the order in which the item appears.
+order: 1 / -1;

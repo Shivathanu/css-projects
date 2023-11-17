@@ -1,0 +1,12 @@
+1. To avoid content from hidden in the bottom where it is greater than the viewport, use small viewport unit inplace of viewport. For eg:
+
+body {
+    height: svh;
+}
+
+2. In order to make font sizes fluid, do not use viewport units on font-size property, as that will violate the rules of zoom in browser or os level.
+Instead set a minimum bound and maximum bound value to clamp function and set to the font size property.
+
+body {
+    font-size: clamp(3rem, 5vw + 1rem,6rem);
+}

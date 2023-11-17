@@ -1,0 +1,6 @@
+1. Make the grid items wrap based on the available space. While doing that, make sure the column width is same across the other columns
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
