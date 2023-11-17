@@ -1,0 +1,103 @@
+Useful oneliners:
+1. Vertical Text
+
+writing-mode: vertical-lr;
+
+2. Flex-Gap
+gap: 24px;
+
+To add gap to column: column-gap: 20px;
+To add gap to row: row-gap: 20px;
+
+3. Flip an image
+transform: scaleX(-1);
+
+4. Smooth Scrolling
+html {
+    scroll-behaviour: smooth
+}
+
+5. Scroll Snapping (snap to nearest edge of image):
+
+container {
+    width: 20rem;
+    height: 20rem;
+    background: white;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+}
+
+.container div {
+    min-width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    color: white;
+    scroll-snap-align: center;
+}
+
+6. Resize Everything => resize: both | vertical | horizontal;
+.box {
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.332);
+    background: white;
+    padding: 2rem;
+    overflow: auto;
+    resize: both;
+}
+
+7. Truncate complete line length by wrapping
+.box p {
+    max-width: 20rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+8. Text Gradients (like it is displayed in mac websites)
+h1 {
+    font-size: 10rem;
+    background: linear-gradient(to right, rgb(67, 124, 205), rgb(67, 223, 405), rgb(67, 524, 101));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+9. Fix image stretching issue
+.box {
+    background: white;
+    width: 25rem;
+    height: 40rem;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+10. Pointer events
+h1 {
+    font-size: 10rem;
+    background: linear-gradient(to right, rgb(67, 124, 205), rgb(67, 223, 405), rgb(67, 524, 101));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fade 1s ease-in 1s;
+    pointer-events: none;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+Note: If we use display: none then the element will be completely removed from DOM, if we use opacity then only the element 
+will be hidden. Particularly useful for animating html elements.
+
+
