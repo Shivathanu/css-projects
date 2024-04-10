@@ -1,0 +1,37 @@
+Tailwind layout (https://tailwindcss.com/)
+
+Below exercise can be tried out online in https://play.tailwindcss.com/.
+
+In tailwind to add responsiveness, always target the breakpoints above small screens, and leave default property to have on mobile.
+So here it is not mobile first development approach, but instead web screen is targeted.
+
+1. How to layout any page using grid with tailwindcss?.
+
+Solution: Visualize how many blocks are required to display on the page. If there are three section then it is required to have three 
+grid items. Please note by default the grid items are displayed on column wise unless specified to show in row by grid-cols-[number of rows].
+
+* For Eg: Using above grid-cols-2 translates in css to grid-template-columns: repeat(2, minmax(0, 1fr));
+
+Lets say we need to display three sections as with typical left sidebar, main content, right sidebar.
+
+```
+<div class="m-4 grid gap-4">
+    <div class="min-h-[100px] rounded-lg bg-orange-500 shadow"></div>
+    <div class="min-h-[100px] rounded-lg bg-teal-500 shadow"></div>
+    <div class="min-h-[100px] rounded-lg bg-purple-500 shadow"></div>
+</div>
+```
+
+2. How to show above three div blocks in row wise as we see in browser web screen. In mobile should be default. 
+
+Hint: Grid layout by default has 12 columns. 
+
+We need to distribute the grid items to span the available column spaces to required, and fill the page.
+
+```
+<div class="m-4 grid grid-cols-1 gap-4 sm:grid-cols-12">
+  <div class="hidden min-h-[100px] rounded-lg bg-orange-500 shadow sm:col-span-2 sm:block"></div>
+  <div class="min-h-[100px] rounded-lg bg-red-500 shadow sm:col-span-8"></div>
+  <div class="hidden min-h-[100px] rounded-lg bg-teal-500 shadow sm:col-span-2 sm:block"></div>
+</div>
+```
