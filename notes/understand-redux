@@ -1,0 +1,351 @@
+1. Why do we use redux ? What problems does using redux solve ?.
+Redux solves the problem of managing state in a large application. It provides a single source of truth for the state of the application, which makes it easier to manage and debug. Redux also makes it easier to share state between components, which can help reduce the amount of code that needs to be written. Redux also provides a way to manage asynchronous actions, which can be difficult to do with just React.
+
+Without redux, every event handler inside the component like button click, input change need to manipulate state logic which can get complex and hard to manage. Redux solves this problem by handling the updated state decentralized in a single place called store. The state update logic is handled by reducers which are pure functions. 
+
+Please note the store is immutable, the state is updated by creating a new state object and not by mutating the existing state object. This makes it easier to track the state changes and debug the application.
+
+To visualize the flow, for example on a button click the handler dispatches an action to the reducer, the reducer updates the state and the updated state is sent back to the component state for render. The store then sends the updated state to the component which re-renders the UI. This flow makes it easier to manage the state of the application and makes it easier to debug and test the application.
+
+Redux functionality is similar to the way reduce works in Javascript.
+
+Redux reduce 
+actions -> reducers -> store -> components
+
+JS reduce (Apply the function logic to each element in the array and reduce it to a single value)
+const actions = [{ type: 'INCREMENT' }, { type: 'DECREMENT' }]
+const initialState = []
+
+actions.reduce(reducer, initialState) -> finalValue
+
+2. How to use redux in react ?.
+To use redux in react, you need to install the redux and react-redux packages. You can install them using npm or yarn.
+
+npm install redux react-redux
+
+or
+
+yarn add redux react-redux
+
+Once you have installed the packages, you can create a store using the createStore function from redux. You can then create a provider component using the Provider component from react-redux and pass the store as a prop. You can then use the connect function from react-redux to connect your components to the store and access the state and dispatch actions.
+
+Here is an example of how to use redux in react:
+
+// store.js
+import { createStore } from 'redux';
+import rootReducer from './reducers';
+
+const store = createStore(rootReducer);
+
+export default store;
+
+// App.js
+
+import React from 'react';
+
+import { Provider } from 'react-redux';
+
+import store from './store';
+
+import Counter from './Counter';
+
+function App() {
+  return (
+    <Provider store={store}>
+      <Counter />
+    </Provider>
+  );
+}
+
+export default App;
+
+// Counter.js
+
+import React from 'react';
+
+import { connect } from 'react-redux';
+
+function Counter({ count, increment, decrement }) {
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => ({
+  count: state.count,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  increment: () => dispatch({ type: 'INCREMENT' }),
+  decrement: () => dispatch({ type: 'DECREMENT' }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+
+// reducers.js
+
+const initialState = {
+  count: 0,
+};
+
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    case 'DECREMENT':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+export default rootReducer;
+
+In this example, we have a store that contains a count state. We have a Counter component that displays the count and has buttons to increment and decrement the count. We use the connect function from react-redux to connect the Counter component to the store and access the count state and dispatch actions to increment and decrement the count.
+
+Above is the old way of using redux in react. The new way is to use redux toolkit which is a set of tools and best practices for using redux in react. Redux toolkit provides a createSlice function that makes it easier to create reducers and actions, and a configureStore function that makes it easier to create a store.
+
+To use redux toolkit in react, you need to install the @reduxjs/toolkit package. You can install it using npm or yarn.
+
+npm install @reduxjs/toolkit
+
+or
+
+yarn add @reduxjs/toolkit
+
+Once you have installed the package, you can create a store using the configureStore function from @reduxjs/toolkit. You can then create a provider component using the Provider component from react-redux and pass the store as a prop. You can then use the useSelector and useDispatch hooks from react-redux to access the state and dispatch actions.
+
+Here is an example of how to use redux toolkit in react:
+
+// store.js
+
+import { configureStore } from '@reduxjs/toolkit';
+
+import counterReducer from './counterSlice';
+
+const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
+});
+
+export default store;
+
+// App.js
+
+import React from 'react';
+
+import { Provider } from 'react-redux';
+
+import store from './store';
+
+import Counter from './Counter';
+
+function App() {
+  return (
+    <Provider store={store}>
+      <Counter />
+    </Provider>
+  );
+}
+
+export default App;
+
+// Counter.js
+
+import React from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+
+import { increment, decrement } from './counterSlice';
+
+function Counter() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+
+// counterSlice.js
+
+import { createSlice } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    value: 0,
+  },
+  reducers: {
+    increment: (state) => {
+      state.value += 1;
+    },
+    decrement: (state) => {
+      state.value -= 1;
+    },
+  },
+});
+
+export const { increment, decrement } = counterSlice.actions;
+
+export default counterSlice.reducer;
+
+In this example, we have a store that contains a counter state. We have a Counter component that displays the count and has buttons to increment and decrement the count. We use the useSelector and useDispatch hooks from react-redux to access the count state and dispatch actions to increment and decrement the count.
+
+3. What is the difference between redux and context api ?.
+
+Further reading: https://blog.logrocket.com/redux-vs-context-api/
+
+The Context API is a feature of React that allows you to pass data through the component tree without having to pass props down manually at every level. It is a way to share values like themes, locales, or authentication status across the component tree. The Context API is a built-in feature of React and is designed to solve the problem of prop drilling.
+
+To optimize the code with context further, both the reducer and the context can be combined to create a global state management system. This is similar to redux but with less boilerplate code. In this way both are used in an application.
+
+For accessing the dispatch in any component, useContext hook with the defined context function can be used.
+
+Further reading: https://react.dev/learn/scaling-up-with-reducer-and-context
+
+// App.js
+
+import AddTask from './AddTask.js';
+import TaskList from './TaskList.js';
+import { TasksProvider } from './TasksContext.js';
+
+export default function TaskApp() {
+  return (
+    <TasksProvider>
+      <h1>Day off in Kyoto</h1>
+      <AddTask />
+      <TaskList />
+    </TasksProvider>
+  );
+}
+
+// TasksContext.js
+
+import { createContext, useContext, useReducer } from 'react';
+
+const TasksContext = createContext(null);
+
+const TasksDispatchContext = createContext(null);
+
+export function TasksProvider({ children }) {
+  const [tasks, dispatch] = useReducer(
+    tasksReducer,
+    initialTasks
+  );
+
+  return (
+    <TasksContext.Provider value={tasks}>
+      <TasksDispatchContext.Provider value={dispatch}>
+        {children}
+      </TasksDispatchContext.Provider>
+    </TasksContext.Provider>
+  );
+}
+
+export function useTasks() {
+  return useContext(TasksContext);
+}
+
+export function useTasksDispatch() {
+  return useContext(TasksDispatchContext);
+}
+
+function tasksReducer(tasks, action) {
+  switch (action.type) {
+    case 'added': {
+      return [...tasks, {
+        id: action.id,
+        text: action.text,
+        done: false
+      }];
+    }
+    case 'changed': {
+      return tasks.map(t => {
+        if (t.id === action.task.id) {
+          return action.task;
+        } else {
+          return t;
+        }
+      });
+    }
+    case 'deleted': {
+      return tasks.filter(t => t.id !== action.id);
+    }
+    default: {
+      throw Error('Unknown action: ' + action.type);
+    }
+  }
+}
+
+const initialTasks = [
+  { id: 0, text: 'Philosopher’s Path', done: true },
+  { id: 1, text: 'Visit the temple', done: false },
+  { id: 2, text: 'Drink matcha', done: false }
+];
+
+// TaskList.js
+
+import { useState } from 'react';
+import { useTasks, useTasksDispatch } from './TasksContext.js';
+
+export default function TaskList() {
+  const tasks = useTasks();
+  return (
+    <ul>
+      {tasks.map(task => (
+        <li key={task.id}>
+          <Task task={task} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// AddTask.js
+
+import { useState } from 'react';
+import { useTasksDispatch } from './TasksContext.js';
+
+export default function AddTask() {
+  const [text, setText] = useState('');
+  const dispatch = useTasksDispatch();
+  return (
+    <>
+      <input
+        placeholder="Add task"
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+      <button onClick={() => {
+        setText('');
+        dispatch({
+          type: 'added',
+          id: nextId++,
+          text: text,
+        }); 
+      }}>Add</button>
+    </>
+  );
+}
+
+let nextId = 3;
+
+
+4. What is the difference between redux and redux toolkit ?.
+Only the slice method which is responsible for creating the action and reducer is different. In redux, we have to create the action and reducer separately. In redux toolkit, we can create the action and reducer in a single file using the createSlice method. This makes it easier to create actions and reducers and reduces the amount of boilerplate code that needs to be written.
+
+
+5. What is the difference between redux and redux saga ?.
+Redux saga is a middleware library for redux that makes it easier to manage side effects like asynchronous actions, data fetching, and more. Redux saga uses generator functions to handle side effects in a synchronous way, which makes it easier to write and test asynchronous code. It is different from redux-thunk which uses promises to handle asynchronous actions and different from redux in that it provides a way to manage side effects in a centralized way.
